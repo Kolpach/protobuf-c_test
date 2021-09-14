@@ -1,6 +1,6 @@
 all: server.o client.o products.pb-c.o network.o
-	gcc client.o products.pb-c.o network.o -o client -lprotobuf-c -Wall -Wextra -Werror
-	gcc server.o products.pb-c.o network.o -o server -lprotobuf-c -Wall -Wextra -Werror
+	gcc client.o products.pb-c.o network.o -o client -L./protobuf-c -lprotobuf-c -Wl,-rpath,./protobuf-c -Wall -Wextra -Werror
+	gcc server.o products.pb-c.o network.o -o server -L./protobuf-c -lprotobuf-c -Wl,-rpath,./protobuf-c  -Wall -Wextra -Werror
 server.o: server.c
 	gcc server.c -c
 client.o: client.c
