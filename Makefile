@@ -10,4 +10,4 @@ products.pb-c.o: products.pb-c.c
 network.o: network.c
 	gcc network.c -c
 clean:
-	rm -rf network.o server.o client.o products.pb-c.o
+	rm -rf network.o server.o client.o products.pb-c.o client server
